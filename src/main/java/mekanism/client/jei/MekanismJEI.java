@@ -293,6 +293,14 @@ public class MekanismJEI extends BlankModPlugin
 		registerRecipeItem(registry, MachineType.ROTARY_CONDENSENTRATOR);
 		
 		registry.addRecipeCategoryCraftingItem(BasicBlockType.THERMAL_EVAPORATION_CONTROLLER.getStack(1), "mekanism.thermal_evaporation_plant");
+		
+
+		registry.addRecipeCategoryCraftingItem(new ItemStack(MachineType.FORMULAIC_ASSEMBLICATOR.typeBlock.getBlock(), 1, MachineType.FORMULAIC_ASSEMBLICATOR.meta),
+			VanillaRecipeCategoryUid.CRAFTING);
+		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerFormulaicAssemblicator.class, VanillaRecipeCategoryUid.CRAFTING,
+			20, 9, 35, 36);
+		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerRobitCrafting.class, VanillaRecipeCategoryUid.CRAFTING,
+				1, 9, 10, 36);
 	}
 	
 	private void registerRecipeItem(IModRegistry registry, MachineType type)
